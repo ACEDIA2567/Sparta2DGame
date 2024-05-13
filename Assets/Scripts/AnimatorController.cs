@@ -5,12 +5,12 @@ public class AnimatorController : MonoBehaviour
 {
     private static readonly int isWalking = Animator.StringToHash("isWalking");
 
-    private Animator animator;
+    [SerializeField] private Animator KnightAnimator;
+    [SerializeField] private Animator ElfAnimator;
     private Controller controller;
 
     private void Awake()
     {
-        animator = GetComponentInChildren<Animator>();
         controller = GetComponent<Controller>();
     }
 
@@ -22,6 +22,7 @@ public class AnimatorController : MonoBehaviour
     // 속도에 따른 isWalking true / false 결정
     private void Move(Vector2 vector)
     {
-        animator.SetBool(isWalking, vector.magnitude > 0.5f);
+        if(KnightAnimator.enabled) KnightAnimator.SetBool(isWalking, vector.magnitude > 0.5f);
+        if(ElfAnimator.enabled) ElfAnimator.SetBool(isWalking, vector.magnitude > 0.5f);
     }
 }
