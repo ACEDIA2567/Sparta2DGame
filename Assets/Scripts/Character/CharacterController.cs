@@ -35,6 +35,7 @@ public class CharacterController : Controller
         CallbackLook(mousePos);
     }
 
+    // 대화 키 E에 따라서 실행
     public void OnTalk(InputValue value)
     {
         CallbackTalk();

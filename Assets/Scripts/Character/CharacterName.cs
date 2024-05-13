@@ -13,9 +13,11 @@ public class CharacterName : MonoBehaviour
 
     void Start()
     {
+        // InputField의 OnEndEdit가 실행이 될 때 해당 메서드 실행되게 함
         nameInputField.onEndEdit.AddListener(NameLengthCheck);
     }
 
+    // 입력한 글자 수에 따라서 버튼 활성화 여부를 정함
     public void NameLengthCheck(string name)
     {
         if (name.Length > 1 && name.Length <= 10)

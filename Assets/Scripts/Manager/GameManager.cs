@@ -17,16 +17,12 @@ public class GameManager : MonoBehaviour
         Instance = this;
     }
 
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
         NameView();
     }
 
+    // NPC가 실시간으로 추가 될 수 있기 때문에 Update에 추가
     private void NameView()
     {
         nameGroup.text = playerName.text;

@@ -7,6 +7,7 @@ public class CharacterInteraction : MonoBehaviour
 {
     // 상호작용 가능할 때 보이는 키
     [SerializeField] private GameObject interaction;
+
     private Controller controller;
     private GameObject dialog;
 
@@ -16,15 +17,16 @@ public class CharacterInteraction : MonoBehaviour
         controller.OnTalk += NPCTalk;
     }
  
+    // 상호작용 키의 활성화에 따라서 대화창 활성화
     private void NPCTalk()
     {
         if (interaction.activeSelf)
         {
-            Debug.Log("오브젝트가 활성화 된 상태");
             dialog.SetActive(true);
         }
     }
 
+    // NPC와 가까워졌을 때 상호작용 키 활성화
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Npc"))
@@ -34,6 +36,7 @@ public class CharacterInteraction : MonoBehaviour
         }
     }
 
+    // NPC와 멀어졌을 때 상호작용 키 비활성화
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Npc"))
