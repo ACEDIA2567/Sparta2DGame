@@ -34,4 +34,9 @@ public class CharacterController : Controller
         mousePos = (worldPos - (Vector2)transform.position).normalized;
         CallbackLook(mousePos);
     }
+
+    public void OnTalk(InputValue value)
+    {
+        CallbackTalk();
+    }
 }
