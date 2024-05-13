@@ -26,14 +26,4 @@ public class Controller : MonoBehaviour
     {
         OnAttack?.Invoke();
     }
-
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
 }

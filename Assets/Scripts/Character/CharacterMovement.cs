@@ -17,6 +17,7 @@ public class CharacterMovement : MonoBehaviour
         controller.OnMoveMent += Move;
     }
 
+    // 플레이어 이동
     private void Move(Vector2 vector)
     {
         rb.velocity = vector * 5;
