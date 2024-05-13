@@ -4,12 +4,12 @@ using UnityEngine;
 public class CharacterAim : MonoBehaviour
 {
     private Controller controller;
-    private SpriteRenderer spriteRenderer;
+    [SerializeField] private SpriteRenderer KnightSprite;
+    [SerializeField] private SpriteRenderer ElfSprite;
 
     private void Awake()
     {
         controller = GetComponent<Controller>();
-        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
     private void Update()
@@ -21,6 +21,9 @@ public class CharacterAim : MonoBehaviour
     private void Look(Vector2 vector)
     {
         float z = Mathf.Atan2(vector.y, vector.x) * Mathf.Rad2Deg;
-        spriteRenderer.flipX = Mathf.Abs(z) > 90;
+        if (KnightSprite.enabled)
+            KnightSprite.flipX = Mathf.Abs(z) > 90;
+        if(ElfSprite.enabled)
+            ElfSprite.flipX = Mathf.Abs(z) > 90;
     }
 }
