@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,6 +10,7 @@ public class NPC : MonoBehaviour
     [SerializeField] private string name;
     [SerializeField] private GameObject panel;
     [SerializeField] private Text nameText;
+    [SerializeField] private Text dialogName;
 
     private Camera camera;
     private Vector3 distance;
@@ -24,6 +26,7 @@ public class NPC : MonoBehaviour
         nameText.text = name;
         // NPC 이름 정보 게임매니저에 추가
         GameManager.Instance.NPCNames.Add(name);
+        dialogName.text = name;
     }
 
     private void Update()
