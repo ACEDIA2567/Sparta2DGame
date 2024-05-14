@@ -9,7 +9,7 @@ public class CharacterInteraction : MonoBehaviour
     [SerializeField] private GameObject interaction;
 
     private Controller controller;
-    private GameObject dialog;
+    private GameObject dialog = null;
 
     void Start()
     {
@@ -22,7 +22,7 @@ public class CharacterInteraction : MonoBehaviour
     {
         if (interaction.activeSelf)
         {
-            dialog.SetActive(true);
+            dialog?.SetActive(true);
         }
     }
 
